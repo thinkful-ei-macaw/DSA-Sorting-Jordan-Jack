@@ -129,8 +129,8 @@ function bucket(array, max) {
   }
 }
 const testArray = [10, 9, 88, 65, 24, 32];
-bucket(testArray, 88);
-console.log(testArray);
+// bucket(testArray, 88);
+// console.log(testArray);
 
 
 // initialize array with the size of highest number
@@ -163,7 +163,34 @@ function shuffleP(array, start, end) {
   return j;
 };
 
-shuffle(array);
-console.log(array);
+// shuffleP(array);
+// console.log(array);
+
+// 8 
+// input => [B,D,A,C....]
+// output => [A,B,C,D]
 
 
+
+function swap(array, i, j) {
+  const tmp = array[i];
+  array[i] = array[j];
+  array[j] = tmp;
+};
+
+function bubbleSort(array) {
+  let swaps = 0;
+  for (let i = 0; i < array.length - 1; i++) {
+    if (array[i] > array[i + 1]) {
+      swap(array, i, i + 1);
+      swaps++;
+    }
+  }
+
+  if (swaps > 0) {
+    return bubbleSort(array);
+  }
+  return array;
+};
+bubbleSort(array)
+console.log("This is bubblesort", array);
